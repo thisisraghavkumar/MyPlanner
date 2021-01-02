@@ -10,5 +10,6 @@ namespace MyPlanner.Data.Services
     public interface IPlannerTasks
     {
         IEnumerable<PlannerTask> GetAllTasks();
+        PlannerTask Get(int Id);
     }
 }

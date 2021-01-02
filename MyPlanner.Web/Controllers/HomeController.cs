@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyPlanner.Data.Models;
 using MyPlanner.Data.Services;
+using MyPlanner.Web.Models;
 
 namespace MyPlanner.Web.Controllers
 {
@@ -15,11 +16,14 @@ namespace MyPlanner.Web.Controllers
         private string AppName { get; }
         public HomeController(IPlannerTasks db) {
             this.db = db;
-            AppName = ConfigurationManager.AppSettings["AppName"];
+            this.AppName = ConfigurationManager.AppSettings["AppName"];
         } 
         public ActionResult Index()
         {
-            var model = this.db.GetAllTasks();
+            var model = new HomeData();
+            model.AppName = this.AppName;
+            model.MyTasks = this.db.GetAllTasks();
+            model.UserName = HttpContext.Request.QueryString["uname"] ?? "Anonymous User";
             return View(model);
         }
 

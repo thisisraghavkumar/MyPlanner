@@ -1,0 +1,82 @@
+﻿@model MyPlanner.Data.Models.PlannerTask
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlannerTask</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Due)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Due)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsImportant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsImportant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsUrgent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsUrgent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSteps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSteps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompletedSteps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompletedSteps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Steps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Steps)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "ShowAll")
+</p>
